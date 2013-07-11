@@ -28,6 +28,7 @@ var rest = require('restler');
 var HTMLFILE_DEFAULT = "index.html";
 var CHECKSFILE_DEFAULT = "checks.json";
 var URL_DEFAULT = "http://shielded-sierra-4229.herokuapp.com/";
+var Output = "GraderOutput.txt";
 
 var assertFileExists = function(infile) {
     var instr = infile.toString();
@@ -84,3 +85,5 @@ if(require.main == module) {
 } else {
     exports.checkHtmlFile = checkHtmlFile;
 }
+
+fs.writeFileSync(Output, outJson);
